@@ -1,0 +1,571 @@
+e = campaignTrail_temp;
+RecReading=true
+
+campaignTrail_temp.global_parameter_json = [
+    {
+        "model": "campaign_trail.global_parameter",
+        "pk": 1,
+        "fields": {
+            "vote_variable": 1.125,
+            "max_swing": 0.12,
+            "start_point": 0.94,
+            "candidate_issue_weight": 10,
+            "running_mate_issue_weight": 3,
+            "issue_stance_1_max": -0.71,
+            "issue_stance_2_max": -0.3,
+            "issue_stance_3_max": -0.125,
+            "issue_stance_4_max": 0.125,
+            "issue_stance_5_max": 0.3,
+            "issue_stance_6_max": 0.71,
+            "global_variance": 0.01,
+            "state_variance": 0.005,
+            "question_count": 14,
+            "default_map_color_hex": "#808080",
+            "no_state_map_color_hex": "#999999"
+        }
+    }
+]
+
+campaignTrail_temp.election_json = [
+    {
+        "model": "campaign_trail.election",
+        "pk": 20,
+        "fields": {
+            "year": 1976,
+            "display_year": "1976",
+            "summary": "<p>Since the introduction of the Altair 8800, companies have been trying to get a slice of the new personal computer pie. Previously confined to research centers, it is now only a matter of time before the computer lands in households across the world.</p>\n\n<ul>\n<li>Steve Jobs must stand out from the rest and build a long legacy of successful computers with the people around him at the newly-formed Apple Computer Company.</li>\n<li>Several other companies will strive to dominate the market on their own terms with their own computers, one way or another.</li></ul><p>(<em>NOTE: demo created in December 2024, may not reflect final version.</em>)</p>",
+            "image_url": "https://i.imgur.com/RtmodBW.png",
+            "winning_electoral_vote_number": 270,
+            "advisor_url": "https://i.imgur.com/0dVI5zK.png",
+            "recommended_reading": "<h4 style=\"margin-top: 0.5em;\">Tech News and Analysis</h4><a href=\"https://www.arstechnica.com/\">Ars Technica</a> -- <a href=\"https://www.businessinsider.com/\">Business Insider</a> -- <a href=\"https://www.zdnet.com/\">ZDNET</a> -- <a href=\"https://www.theverge.com/\">The Verge</a> -- <a href=\"https://www.cnet.com/\">CNET</a> -- <a href=\"https://techcrunch.com\">Tech Crunch</a><h4>By and About the People</h4>On Steve Jobs, by Friends, Family, Colleagues with Leslie Berlin - <a href=\"https://stevejobsarchive.com/book\">Make Something Wonderful</a><br>Steve Wozniak - <a href=\"https://www.amazon.com/iWoz-Computer-Invented-Personal-Co-Founded/dp/0393330435\">iWoz: Computer Geek to Cult Icon</a><br>Bill Gates - <a href=\"https://www.amazon.com/Untitled-1581-Knopf/dp/059380158X/\">Source Code: My Beginnings</a><br>On Jack Tramiel, by Brian Bagnall - <a href=\"https://www.amazon.com/Story-Commodore-Company-Edge/dp/0973864907\">The Story of Commodore: A Company on the Edge</a><h4>Early Days of Apple</h4>Various Authors - <a href=\"https://www.folklore.org/0-index.html\">Folklore.org: The Original Macintosh</a><br>Various Contributors - <a href=\"https://en.wikipedia.org/wiki/History_of_Apple_Inc.\">History of Apple Inc.</a><h4>Miscellany</h4>Pancreatic Cancer Action Network - <a href=\"https://pancan.org/\">Research, Patient Support, Resources</a><br>Ahoy - <a href=\"https://www.youtube.com/watch?v=zB_UZsJUbwQ\">FLATLINE: How The Amiga Languished</a><br>Geoff Brumfiel - <a href=\"https://www.npr.org/2017/05/31/530235165/total-failure-the-worlds-worst-video-game\">Total Failure: The World\'s Worst Video Game</a><br>Jason Ward - <a href=\"https://www.windowscentral.com/microsofts-terry-myerson-and-others-why-windows-phone-failed-thats-fixed-now\">Former and current Microsoft staffers talk about why Windows phones failed</a>",
+            "has_visits": 0,
+            "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
+        }
+    }
+]
+
+document.getElementById("inner_window_1").children[0].innerHTML = `<h3>Do you have what it takes to manage a company?</h3>`
+document.getElementById("inner_window_1").children[1].innerHTML = `<li>Select a starting year and a figurehead to find out.</li><li>You will answer questions about your company and decisions, and also about your business strategy.</li><li>The answers will affect your market share for better or worse, whether with or outside of computers.</li><li>Walk the fine line between appealing to your base and winning a majority of the market.</li>`;
+campaignTrail_temp.credits = "u/marcART122 with help from Peter188, Ronnie, and sardokars"
+
+campaignTrail_temp.candidate_json = [
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 200,
+        "fields": {
+            "first_name": "Steve",
+            "last_name": "Jobs",
+            "election": 20,
+            "party": "Apple Computer Company",
+            "state": "California",
+            "priority": 1,
+            "description": "<p>Steve Jobs enters 1976 a college dropout and soon-to-be-former Atari technician. A regular at the local Homebrew Computer Club, he and longtime friend Steve Wozniak have been busy with creating a microcomputer of their own and the prospect of starting a business. The goal is to usher in a new direction for computers as a whole. He will begin small with a family garage, circuit boards, chips, and his hopes and dreams.</p>",
+            "color_hex": "#a6edf7",
+            "secondary_color_hex": null,
+            "is_active": 1,
+            "image_url": "https://i.imgur.com/NC9z8wH.png",
+            "electoral_victory_message": "<h3>Congratulations! You got a placeholder ending.</h3><p>As you can see, things obviously aren't finished. Some features may be missing, some things may not be final, etc. Whatever the case is, it should hopefully be taken care of sometime later.</p><p>That's about it. Cya.</p>",
+            "electoral_loss_message": "<h3>Congratulations! You got a placeholder ending.</h3><p>As you can see, things obviously aren't finished. Some features may be missing, some things may not be final, etc. Whatever the case is, it should hopefully be taken care of sometime later.</p><p>That's about it. Cya.</p>",
+            "no_electoral_majority_message": "<h3>Congratulations! You got a placeholder ending.</h3><p>As you can see, things obviously aren't finished. Some features may be missing, some things may not be final, etc. Whatever the case is, it should hopefully be taken care of sometime later.</p><p>That's about it. Cya.</p>",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 204,
+        "fields": {
+            "first_name": "",
+            "last_name": "Apple Computer Company",
+            "election": 20,
+            "party": "Apple Computer Company",
+            "state": "California",
+            "priority": 3,
+            "description": "",
+            "color_hex": "#a6edf7",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://i.imgur.com/nZXgE8S.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": "<p>Apple is new on the block, having formed only weeks ago. Founded together by Jobs, Wozniak, and Ronald Wayne -- the former chief draftsman of Atari, Inc. -- it is a partnership that holds the promise of revolutionizing the computer as it is currently known today: a series of room-scale machines that has taken the United States to the Moon.</p><p>As a startup, Apple will determine the future of its founders and the employees that may or may not join them.</p>",
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 201,
+        "fields": {
+            "first_name": "Gerald",
+            "last_name": "Ford",
+            "election": 20,
+            "party": "Republican Party",
+            "state": "",
+            "priority": 2,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 211,
+        "fields": {
+            "first_name": "Walter",
+            "last_name": "Mondale",
+            "election": 20,
+            "party": "Turbo Team",
+            "state": "Idaho",
+            "priority": 4,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    },
+]
+
+campaignTrail_temp.running_mate_json = [
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 157,
+        "fields": {
+            "candidate": 201,
+            "running_mate": 211
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 150,
+        "fields": {
+            "candidate": 200,
+            "running_mate": 204
+        }
+    }
+]
+
+campaignTrail_temp.opponents_default_json = [
+    {
+        "election": 20,
+        "candidates": [
+            200,
+            201
+        ]
+    }
+]
+
+
+campaignTrail_temp.temp_election_list = [
+    {
+        "id": 20,
+        "year": 1976,
+        "is_premium": 0,
+        "display_year": "1976"
+    }
+]
+
+
+function updateElectionForm() {
+    eleformobserver.disconnect();
+    const heading = document.querySelector("#election_year_form form h3");
+
+    if (heading) {
+        heading.textContent = "Please select the year you will start in:";
+    }
+    eleformobserver.observe(document.documentElement, { childList: true, subtree: true });
+}
+if(!eleformobserver){
+    var eleformobserver = new MutationObserver(updateElectionForm);
+    eleformobserver.observe(document.documentElement, { childList: true, subtree: true });
+}
+
+
+function updateCandidateForm() {
+    formobserver.disconnect();
+    const heading = document.querySelector("#candidate_form form h3");
+
+    if (heading) {
+        heading.textContent = "Please select your figure:";
+    }
+    formobserver.observe(document.documentElement, { childList: true, subtree: true });
+}
+if(!formobserver){
+    var formobserver = new MutationObserver(updateCandidateForm);
+    formobserver.observe(document.documentElement, { childList: true, subtree: true });
+}
+
+
+function updateRunningMateForm() {
+    runformobserver.disconnect();
+    const heading = document.querySelector("#running_mate_form form h3");
+
+    if (heading) {
+        heading.textContent = "Please select your company:";
+    }
+    runformobserver.observe(document.documentElement, { childList: true, subtree: true });
+}
+if(!runformobserver){
+    var runformobserver = new MutationObserver(updateRunningMateForm);
+    runformobserver.observe(document.documentElement, { childList: true, subtree: true });
+}
+
+quotes = ["Think different.", "Make something wonderful.", "Stay hungry.", "Stay foolish.", "Bold. Brilliant. Brutal." ]
+customquote = quotes[Math.floor((Math.random() * quotes.length))]
+
+corrr = `\n<h2>THE APPLE TRAIL</h2><font id='wittyquote' size='4' color='white'><em>`+customquote+`</em></font>`
+
+
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#ffffff";
+
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#ffffff";
+
+document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
+
+$("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
+
+$(".container")[0].style.backgroundColor = "#FFFFFF";
+
+document.getElementById("header").src = "https://i.imgur.com/HevJf4v.png";
+
+document.head.innerHTML += `<style>
+body {
+    accent-color: black;
+}
+
+button {
+    color: #000!important;
+    background-color: #FFF;
+    border-color: #000;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    &:active,
+    &.active {
+        color: #FFF!important;
+        background-color: #000;
+        border-color: #FFF;
+        border-style: solid;
+    }
+}
+
+/*input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 31.25%;
+    border: 1px solid #000;
+    background: #FFF;
+    height: 13px;
+    width: 13px;
+    &:active,
+    &.active {
+        background: #000;
+    }
+    &:checked,
+    &.checked {
+        background: #000;
+    }
+}*/
+
+.base {
+    background: #E0CCA8;
+}
+
+#results_container {
+    color:#000000;
+}
+
+.inner_window_w_desc {
+    background-color:#ffffff!important;
+}
+
+.container {
+    border-width: 1px 40px;
+    border-style: solid;
+    border-color: #000;
+}
+
+.content_single {
+    border-color: #000;
+    border-width: 1px 0;
+}
+
+.game_header {
+    background-color: #000!important;
+    border-width: 1px;
+    border-color: #000;
+}
+
+#game_window {
+    background-image: url("https://i.imgur.com/9gOrW0l.png");
+    background-attachment: fixed;
+    background-position: top;
+    border-color: #000;
+    border-width: 1px;
+}
+
+#map_container {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    background: #FFF;
+}
+
+#menu_container {
+    background-color: #FFF;
+}
+
+#menu_container h3 {
+    background-color: #FFF;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: #000;
+    line-height: initial;
+}
+
+#overall_result_container {
+    background-color: #FFF;
+}
+
+#overall_result {
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    height: 100%
+}
+
+#state_info {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    margin: 0 0 0;
+}
+
+#state_result {
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    margin: 0 0 0;
+    height: 100%;
+}
+
+.footer {
+    border-color: #000;
+    color: #000;
+    border-style: solid;
+    border-width: 1px 0 0;
+}
+
+.inner_window_front {
+    border-style: solid!important;
+    border-width: 1px!important;
+    border-color: #000!important;
+    background-color: #FFF!important;
+    box-shadow: 2px 2px #000;
+}
+
+.campaign_trail_start_emphasis {
+    background-color: #FFF;
+}
+
+#election_description_window {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 2px 2px #000;
+}
+
+.inner_window_w_desc {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+}
+
+.inner_window_question {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+}
+
+.inner_inner_window h3 {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+}
+
+.inner_window_sign_display {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+}
+
+#campaign_sign {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 2px 2px #000;
+}
+
+#campaign_sign p {
+    color: #000;
+}
+
+#candidate_pic {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+}
+
+
+#running_mate_pic {
+    background-color: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 1px 1px #000;
+}
+
+.overlay {
+    opacity: 0;
+}
+
+.overlay_window {
+    background: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    box-shadow: 2px 2px #000;
+}
+
+.overlay_window_content {
+    & img {
+        background: #FFF;
+        border-style: solid;
+        border-color: #000;
+        border-width: 1px;
+    }
+
+    & h3 {
+        background: #FFF;
+        border-style: solid;
+        border-color: #000;
+        border-width: 0px 0px 1px 0px;
+        font-size: 12px;
+        height: 13px;
+        padding: 2px 1px;
+
+        &::before {
+            background: repeating-linear-gradient(#FFF, #FFF 1px, #000 1px, #000 2px);
+            background-clip: content-box;
+            height: 13px;
+            display: inline-block;
+            width: 37%;
+            float: left;
+            content: ''
+        }
+
+        &::after {
+            background: repeating-linear-gradient(#FFF, #FFF 1px, #000 1px, #000 2px);
+            background-clip: content-box;
+            height: 13px;
+            display: inline-block;
+            width: 37%;
+            float: right;
+            content: ''
+        }
+    }
+}
+
+.person_description_window {
+    background-color: #FFF;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 2px 2px #000;
+}
+
+.person_image {
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 2px 2px #000;
+}
+
+.description_window_small {
+    background-color: #FFF;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 2px 2px #000;
+}
+
+#results_container {
+    background: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0px 0px 1px 0px;
+    box-shadow: 1px 1px #000;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    background-color: #FFF;
+}
+
+#overall_details_container {
+    color: #000;
+    background: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0px 0px 1px 0px;
+    box-shadow: 1px 1px #000;
+}
+
+#main_content_area_reading {
+    color: #000;
+    background: #FFF;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0px 0px 1px 0px;
+    box-shadow: 1px 1px #000;
+}
+
+#recommended_reading_box {
+    background-color: #FFF;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+}
+</style>`;
