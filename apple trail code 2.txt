@@ -38,8 +38,12 @@ cyoAdventure = function (a) {
         ii += 2;
     }
 
-    if (ans == 2001) {
+    if (ans == 2001 || ans == 2005 || ans == 2007) {
         ii += 1;
+    }
+
+    if (ii == 3) {
+        updateFeedback(3008, "Bad news, we’re constantly overworked. Good news, it’s because our Apple ][ is just that successful! We really have to set up our company now, if anything, just to cope with demand. We struck gold!");
     }
 
     if (ii == 2) {
@@ -70,6 +74,10 @@ cyoAdventure = function (a) {
         }
     }
 
+    if ((ans == 2008) && (ii >= 3)) {
+        applesuccess1 += 3;
+    }
+
     if ((ans == 2008) && (ii == 2)) {
         applesuccess1 += 2;
     }
@@ -81,6 +89,41 @@ cyoAdventure = function (a) {
     if (ans == 2016) {
         applesuccess1 += 1;
         bill += 1;
+
+        e.questions_json[5] = {
+            "model": "campaign_trail.question",
+            "pk": 105,
+            "fields": {
+                "priority": 1,
+                "description": "So, the Apple /// couldn't have gone better. But you still have another card--now the Apple Lisa--to play. However, Apple is still a little short on people. Who do you poach from?",
+                "likelihood": 1
+            }
+        }
+    }
+
+    if (ans == 2017) {
+        e.questions_json[5] = {
+            "model": "campaign_trail.question",
+            "pk": 105,
+            "fields": {
+                "priority": 1,
+                "description": "So, the Apple /// could have gone better. But you still have another card--now the Apple Lisa--to play. However, Apple is still a little short on people. Who do you poach from?",
+                "likelihood": 1
+            }
+        }
+    }
+
+    if (ans == 2019) {
+        iii = 0;
+        e.questions_json[5] = {
+            "model": "campaign_trail.question",
+            "pk": 105,
+            "fields": {
+                "priority": 1,
+                "description": "So, you've skipped the Apple ///. But you still have another card--now the Apple Lisa--to play. However, Apple is still a little short on people. Who do you poach from?",
+                "likelihood": 1
+            }
+        }
     }
 
     if (ans == 2018) {
@@ -129,10 +172,6 @@ cyoAdventure = function (a) {
         windows128k += 1;
     }
 
-    if (ans == 2019) {
-        iii = 0;
-    }
-
     if (ans == 2006 || ans == 2007) {
         philosophy += 1;
     }
@@ -140,10 +179,6 @@ cyoAdventure = function (a) {
     if (ans == 2012) {
         frustration += 1;
         updateFeedback(3043, "Bill Gates is shocked by your sudden appearance at the Albuquerque headquarters. Nonetheless, he readily accepts your offer, excited to see another scrappy underdog like you join his company despite Steve Ballmer's worries. Welcome to Microsoft.");
-    }
-
-    if (ans == 2019) {
-        iii = 0;
     }
 
     if (ans == 2021) {
@@ -206,7 +241,7 @@ cyoAdventure = function (a) {
                 }
             }
 
-            e.answers_json[32] = {
+            e.answers_json[34] = {
                 "model": "campaign_trail.answer",
                 "pk": 2038,
                 "fields": {
@@ -270,7 +305,7 @@ cyoAdventure = function (a) {
                 }
             }
             
-            e.answers_json[36] = {
+            e.answers_json[38] = {
                 "model": "campaign_trail.answer",
                 "pk": 2042,
                 "fields": {
@@ -293,7 +328,7 @@ cyoAdventure = function (a) {
                 }
             }
             
-            e.answers_json[42] = {
+            e.answers_json[44] = {
                 "model": "campaign_trail.answer",
                 "pk": 12002,
                 "fields": {
@@ -325,7 +360,7 @@ cyoAdventure = function (a) {
                 }
             }
             
-            e.answers_json[43] = {
+            e.answers_json[45] = {
                 "model": "campaign_trail.answer",
                 "pk": 12003,
                 "fields": {
@@ -336,7 +371,7 @@ cyoAdventure = function (a) {
 
             updateFeedback(13003, "Let's hope you're right.");
             
-            e.answers_json[44] = {
+            e.answers_json[46] = {
                 "model": "campaign_trail.answer",
                 "pk": 12004,
                 "fields": {
@@ -347,7 +382,7 @@ cyoAdventure = function (a) {
 
             updateFeedback(13004, "Your stepping down has sent massive shockwaves across the industry. The world is waiting for your next move now, Steve.");
             
-            e.answers_json[36] = {
+            e.answers_json[38] = {
                 "model": "campaign_trail.answer",
                 "pk": 2042,
                 "fields": {
@@ -645,26 +680,72 @@ cyoAdventure = function (a) {
     }
 
     if (e.question_number >= 0 && e.question_number <= 3) {
-        e.running_mate_image_url = 'https://i.imgur.com/qg16reb.png';
+        e.running_mate_image_url = 'https://i.imgur.com/qmBHvcO.png';
     }
 
     if (e.question_number >= 4 && e.question_number < 13) {
-        e.candidate_image_url = 'https://i.imgur.com/rdCg3sM.png';
+        e.candidate_image_url = 'https://i.imgur.com/cinc5OQ.png';
 
         if (company == 0) {
-            e.running_mate_image_url = 'https://i.imgur.com/dxUWZrx.png';
+            e.running_mate_image_url = 'https://i.imgur.com/WCOLHuH.png';
             e.election_json[0].fields.advisor_url = "https://i.imgur.com/IC01IZL.png";
         }
 
         if (company == 5) {
             e.running_mate_last_name = 'Unemployed';
-            e.running_mate_image_url = 'https://i.imgur.com/Z3qhFOb.png';
+            e.running_mate_image_url = 'https://i.imgur.com/2nZxOTc.png';
             e.election_json[0].fields.advisor_url = "https://i.imgur.com/YwfG65l.png";
         }
     }
 
     if (e.question_number >= 13) {
         e.election_json[0].fields.advisor_url = "https://i.imgur.com/0rM8yH7.png";
+    }
+
+    if (e.question_number >= -1 && e.question_number < 6) {
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.first_name = "Jimmy";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.last_name = "Carter";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.color_hex = "#0000FF";
+        console.log("gimme jimmy");
+    }
+
+    if (e.question_number >= 1 && e.question_number < 5) {
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.first_name = "The";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.last_name = "Republicans";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.color_hex = "#FF0000";
+        console.log("obamna");
+    }
+
+    if (e.question_number >= 5 && e.question_number < 13) {
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.first_name = "Ronald";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.last_name = "Reagan";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.color_hex = "#FF0000";
+        console.log("california!!!");
+    }
+
+    if ((e.question_number >= 6 && e.question_number < 9) ||
+        (e.question_number >= 10 && e.question_number < 13)) {
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.first_name = "The";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.last_name = "Democrats";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.color_hex = "#0000FF";
+        console.log("soda");
+    }
+
+    if (e.question_number == 9) {
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.first_name = "Walter";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.last_name = "Mondale";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.color_hex = "#0000FF";
+        console.log("i just did");
+    }
+
+    if (e.question_number >= 13) {
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.first_name = "Barack";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.last_name = "Obama";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.color_hex = "#0000FF";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.first_name = "Mitt";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.last_name = "Romney";
+        campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 201).fields.color_hex = "#FF0000";
+        console.log("oops");
     }
 
     
@@ -680,13 +761,7 @@ cyoAdventure = function (a) {
     console.log("m128k = " + m128k);
     console.log("windows128k = " + windows128k);
     console.log("e.noCounter = " + e.noCounter);
-}
-
-
-if (e.question_number >= 0) {
-    campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.first_name = "Jimmy"
-    campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.last_name = "Carter"
-    campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.color_hex = "#0000FF"
+    console.log("e.question_number = " + e.question_number);
 }
 
 
@@ -1038,7 +1113,7 @@ e.questions_json = [
         "pk": 105,
         "fields": {
             "priority": 1,
-            "description": "So, the Apple /// didn't work out. But you still have another card--now the Apple Lisa--to play. But Apple is still a little short on people. Who do you poach from?",
+            "description": "So, the Apple /// didn't work out. But you still have another card--now the Apple Lisa--to play. However, Apple is still a little short on people. Who do you poach from?",
             "likelihood": 1
         }
     },
@@ -1158,10 +1233,26 @@ e.answers_json = [
     },
     {
         "model": "campaign_trail.answer",
+        "pk": 2005,
+        "fields": {
+            "question": 101,
+            "description": "I need to step in. No. Or at least they should not be that many. It should be usable out of the box. And fine, add vents and a fan. The Apple I's boards got hot to the touch and I don't feel comfortable with that sort of thing."
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
         "pk": 2006,
         "fields": {
             "question": 101,
             "description": "Let him. The Apple I was a board and chips slapped together, meant just for people like us. It's time we offer something better."
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
+        "pk": 2007,
+        "fields": {
+            "question": 101,
+            "description": "Let him. But can I add that while I prefer not to have them, our machine would overheat if there is no vent and fan?"
         }
     },
     {
@@ -3752,8 +3843,12 @@ e.answer_score_global_json = [
         }
     }
 ];
-e.candidate_image_url = 'https://i.imgur.com/NC9z8wH.png';
-e.running_mate_image_url = 'https://i.imgur.com/nZXgE8S.png';
+
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.first_name = "Jimmy";
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.last_name = "Carter";
+campaignTrail_temp.candidate_json.find(candidate => candidate.pk == 200).fields.color_hex = "#0000FF";
+e.candidate_image_url = 'https://i.imgur.com/7Ik76xc.png';
+e.running_mate_image_url = 'https://i.imgur.com/gSBSoJz.png';
 e.candidate_last_name = 'Jobs';
 e.running_mate_last_name = 'Apple';
 e.running_mate_state_id = '1004';
