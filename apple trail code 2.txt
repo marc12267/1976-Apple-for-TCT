@@ -532,7 +532,7 @@ cyoAdventure = function (a) {
             } //hoffman
         } // +2 applesuccess1
         
-        else if (applehire1 == 1 && ceo == 0 && windows128k == 1) {
+        else if (applehire1 == 0 && ceo == 1 && windows128k == 1) {
             answerSwapper(2037, 12033, true);
             updateFeedback(13033, "Jobs, we have a problem: we don't have enough contractors for another 500,000 Macintoshes to meet demand! We're in the Goldilocks zone; everyone wants one. If those trends continue, we should reach a million units sold by the end of the year!");
         } // +3 applesuccess1
