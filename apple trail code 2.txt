@@ -764,7 +764,6 @@ cyoAdventure = function (a) {
     console.log("e.question_number = " + e.question_number);
 }
 
-
 function answerSwapper(pk1, pk2, takeEffects = true) {
     // Hardcoded JSON data for answers
     const answerData = campaignTrail_temp.answers_json;
@@ -994,6 +993,7 @@ async function checkAndChangeAdvisorImage() {
             chosenAns == 12034 ||
             chosenAns == 12035 ||
             chosenAns == 12036 ||
+            chosenAns == 12037 ||
             chosenAns == 12000 ||
             chosenAns == 12001 ||
             chosenAns == 12002 ||
