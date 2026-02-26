@@ -17205,10 +17205,8 @@ function openHeadquarter() {
                         ((applehire1 != 0 && ceo == 1) && (windows128k == 1)) ||
                         ((applehire1 == 0 && ceo != 1) && (windows128k == 1))) {
                         a.innerHTML += 'Small success';
-                    }
-
-                    else {
-                        applesuccess1 += 3;
+                    } else {
+                        a.innerHTML += 'Smash success!';
                     }
                 }
 
