@@ -1821,7 +1821,7 @@ cyoAdventure = function (a) {
         }
 
         if (ans == 2139) {
-            minipath = 5;
+            minipath = 4;
         }
 
         //**q41; minipath p6**
@@ -2215,7 +2215,7 @@ cyoAdventure = function (a) {
         if (e.question_number <= 12) {
             e.running_mate_image_url = 'https://i.postimg.cc/tJRM5XwJ/unemployed.png';
             e.election_json[0].fields.advisor_url = "https://i.postimg.cc/267thqH2/no_company_1980s.png";
-        } else if (e.question_number >= 13 && e.question_number <= 47) {
+        } else if (e.question_number >= 13 && e.question_number <= 48) {
             e.running_mate_image_url = 'https://i.postimg.cc/qqB5LkSg/unemployed_2000s.png';
             e.election_json[0].fields.advisor_url = "https://i.postimg.cc/XJkPdZ22/no_company.png";
         }
