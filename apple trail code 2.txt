@@ -17964,7 +17964,7 @@ endingPicker = (out, totv, aa, quickstats) => {
                     Indeed, helping startups isn't all he's been up to. More recently, Steve Jobs mentioned that his collection of Kawase Hasui's ukiyo-e was "almost complete" during an interview when asked about his admiration of Hasui among other artists. He has also delivered seminars centering around the future of green technology, most notably at the 2015 World Economic Forum.
                     </p>
                     <p>
-                    And <span style="text-decoration:underline;">just yesterday</span>, he had visited Apple Park for the first time earlier this year, as one tweet from Apple SVP of software engineering Craig Federighi would have it. Maybe that was his \"one last thing\" for the year.
+                    And <span style="text-decoration:underline;">just yesterday</span>, he had visited Apple Park for the first time earlier this year, as one tweet from Apple SVP of software engineering Craig Federighi would have it. Maybe that was his \"one more thing\" for the year.
                     </p>`);
                 //e.image = "";
                 e.executable.push([0, (() => { e.image = e.image = 'https://i.postimg.cc/PqZ9fVYK/arstechnica_2018.png' })]);
