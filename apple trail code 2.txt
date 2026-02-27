@@ -809,6 +809,9 @@ cyoAdventure = function (a) {
     if (ans == 2078) {
         updateQuestion(129, "Perot has stuck it out until the end. Unfortunately, continued hardships and gaffes meant his early momentum came to a screeching halt. Still, you can't help but to celebrate the states he's won and the above 5% of the popular vote needed to gain federal funding.");
         updateAnswer(2081, "I'll be damned.");
+        changeGlobalEffect(93, 2084, -30);
+        changeGlobalEffect(93, 2085, -30);
+        changeGlobalEffect(93, 12016, -30);
     }
 
     if (ans == 2079) {
@@ -819,6 +822,9 @@ cyoAdventure = function (a) {
     if (ans == 2080) {
         updateQuestion(129, "With Perot out of the picture for good, you've resigned yourself to watching the outcome of the 1992 election. You wonder what could have been as Governor Clinton sweeps the nation.");
         updateAnswer(2081, "Damn.");
+        changeGlobalEffect(93, 2084, 0);
+        changeGlobalEffect(93, 2085, 0);
+        changeGlobalEffect(93, 12016, 0);
     }
 
     //**q30; election p3**
@@ -2875,6 +2881,33 @@ function appendStyle2() {
         `;
         document.head.appendChild(style);
     }
+}
+
+//change a global effect, searches for candidate and answers. If no effect exists, create a new one with changeAmount as value
+function changeGlobalEffect(affectedCandidate, answer, changeAmount) {
+  let found = false;
+  // Loop through each object in the JSON array
+  campaignTrail_temp.answer_score_global_json.forEach((item) => {
+    // Check if the affected candidate and answer fields match the provided values
+    if (item.fields.affected_candidate === affectedCandidate && item.fields.answer === answer) {
+      // Update the global_multiplier
+      item.fields.global_multiplier += changeAmount;
+      found = true;
+    }
+  });
+
+  // If no matching entry was found, create a new one
+  if (!found) {
+    const lastEntry = campaignTrail_temp.answer_score_global_json[campaignTrail_temp.answer_score_global_json.length - 1];
+    const newEntry = JSON.parse(JSON.stringify(lastEntry)); // Clone the last entry
+
+    newEntry.pk = lastEntry.pk + 1;
+    newEntry.fields.affected_candidate = affectedCandidate;
+    newEntry.fields.answer = answer;
+    newEntry.fields.global_multiplier = changeAmount;  // Overwrite global_multiplier with changeAmount
+
+    campaignTrail_temp.answer_score_global_json.push(newEntry);
+  }
 }
 
 function answerSwapper(pk1, pk2, takeEffects = true) {
@@ -12283,7 +12316,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2078,
             "candidate": 91,
             "affected_candidate": 93,
-            "global_multiplier": -50
+            "global_multiplier": -100
         }
     },
     {
@@ -12293,7 +12326,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2079,
             "candidate": 91,
             "affected_candidate": 93,
-            "global_multiplier": -90
+            "global_multiplier": -110
         }
     },
     {
@@ -12563,7 +12596,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2084,
             "candidate": 91,
             "affected_candidate": 93,
-            "global_multiplier": -40
+            "global_multiplier": -20
         }
     },
     {
@@ -12573,7 +12606,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 2085,
             "candidate": 91,
             "affected_candidate": 93,
-            "global_multiplier": -40
+            "global_multiplier": -20
         }
     },
     {
@@ -12583,7 +12616,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 12016,
             "candidate": 91,
             "affected_candidate": 93,
-            "global_multiplier": -40
+            "global_multiplier": -20
         }
     },
     {
