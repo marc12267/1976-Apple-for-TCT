@@ -753,7 +753,7 @@ campaignTrail_temp.candidate_json = [
 ]
 
 credits = function() {
-    alert("\nSPECIAL THANKS\n- StrawberryMaster: Playtesting, bugfixing, suggestions\n- Timberwolf: Coding suggestions\n- Twingamerdudes: Soundtrack adding help\n\nBITS AND PIECES\n- 2024DM Team: \"OK\" button text code (adapted for advisor images)\n- Astrohunch_o: Question tunneling\n- Decstar1: Music player (modified CSS)\n- ItsAstronomical: Variable tracker (base)\n- Nina: Answer swapper code (modified to also change question and answer text), tooltip code (modified CSS)\n- APA_LATCHA: Answer gray-out code (repurposed for dummying out paths)");
+    alert("\nSPECIAL THANKS\n- StrawberryMaster: Playtesting, bugfixing, suggestions\n- Timberwolf: Coding suggestions\n- Twingamerdudes: Soundtrack adding help\n\nBITS AND PIECES\n- 2024DM Team: \"OK\" button text code (adapted for advisor images)\n- Astrohunch_o: Question tunneling\n- Decstar1: Music player (modified CSS)\n- ItsAstronomical: Variable tracker (base)\n- Nina: Answer swapper code (modified to also change question and answer text), tooltip code (modified HTML/CSS), global effect changer\n- APA_LATCHA: Answer gray-out code (repurposed for dummying out paths)");
 }
 
 campaignTrail_temp.running_mate_json = [
