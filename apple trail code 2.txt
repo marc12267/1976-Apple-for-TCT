@@ -1244,7 +1244,7 @@ cyoAdventure = function (a) {
             }
         }
 
-        if (ans == 2084) {
+        if (ans == 2084 || ans == 12016) {
             if (nextsuccess >= -1) {
                 company = 0;
             } else {
