@@ -753,7 +753,7 @@ cyoAdventure = function (a) {
     }
 
     //**q34**
-    if (e.question_number == 32) {
+    if ((e.question_number == 32) && (nextsuccess >= -1)) {
         appendStyle2();
     }
 
@@ -914,6 +914,10 @@ cyoAdventure = function (a) {
         }
 
         //**q19**
+        if (ans == 2057) {
+            nextcomp -= 1;
+        }
+        
         if (ans == 2058) {
             nextcomp += 1;
         }
@@ -1219,6 +1223,10 @@ cyoAdventure = function (a) {
             }
         }
 
+        if (ans == 2074) {
+            nextsuccess += 1;
+        }
+
         //**q33**
         if (e.question_number == 31) {
             if (nextsuccess >= -1) {
@@ -1236,11 +1244,13 @@ cyoAdventure = function (a) {
             }
         }
 
-        if (ans == 2084 || ans == 12016) {
+        if (ans == 2084) {
             if (nextsuccess >= -1) {
                 company = 0;
             } else {
                 e.question_number = 49;
+
+
             }
         }
 
@@ -1685,11 +1695,11 @@ cyoAdventure = function (a) {
         }
 
         if (nextsuccess >= 1) {
-            updateFeedback(3116, "It may have seemed foolhardy to us, but under your direct leadership, you’ve avoided layoffs and integrated new talent into your other company. And now we hear that Disney’s eager to approach Pixar with a few movies that will really let the animation team spread their wings.");
+            updateFeedback(3116, "It may have seemed foolhardy to us, but under your direct leadership, you’ve avoided layoffs and integrated new talent into your other company. And now we hear that Disney’s eager to approach us with a few movies that will really let the animation team spread their wings.");
             updateFeedback(3118, "Despite our reservations, we're on board. The animation division will be sold off, and in its wake, the computer division shall take a life of its own.");
 
             if (nextsuccess >= 3) {
-                updateFeedback(3117, "Perhaps we were foolish to doubt you. The few ads Pixar made are a success, and the modified software is popular among hospitals. And now we hear that we're about to strike a deal with Disney. Keep it up, Steve.");
+                updateFeedback(3117, "Perhaps we were foolish to doubt you. The few ads Pixar made are a success, and the modified software is popular among hospitals. And now we're about to strike a deal with Disney. Keep it up, Steve.");
             }
         }
 
@@ -2183,8 +2193,22 @@ cyoAdventure = function (a) {
             document.getElementById("trackSelParent").remove();
             newMusicPlayer();
         }
-        //**q34**
+        //**q33**
 
+        if ((ans == 2084) && (nextsuccess < -1)) {
+            soundtracks[2] = {
+                name: "NeXT (Ending)",
+                tracklist: [
+                    {
+                        "name": "Elton John - Where To Now St. Peter?",
+                        "url": "https://file.garden/aTSzLyzGbgwzK-kK/Apple/Where%20To%20Now%20St.%20Peter.ogg"
+                    }
+                ]
+            }
+            selectedSoundtrack = 2;
+            document.getElementById("trackSelParent").remove();
+            newMusicPlayer();
+        }
     }
 
     //**change photos and stuff**
@@ -2265,6 +2289,8 @@ cyoAdventure = function (a) {
         if ((e.player_answers.includes(2003) ||
             e.player_answers.includes(2041)) || (applesuccess1 <= -1)) {
             e.election_json[0].fields.advisor_url = 'https://i.postimg.cc/1z62R7wd/blitzker_bw.png';
+        } else if (nextsuccess < -1) {
+            e.election_json[0].fields.advisor_url = 'https://i.postimg.cc/HsrMZHN7/blitzker-4096.png';
         } else {
             e.election_json[0].fields.advisor_url = 'https://i.postimg.cc/s2SqfH78/blitzker.png';
         }
@@ -3136,8 +3162,7 @@ async function checkAndChangeAdvisorImage() {
         }
 
         //Board, pt. 2; Trempont, Mandich
-        if (chosenAns == 2125 ||
-            chosenAns == 2074 ||
+        if (chosenAns == 2074 ||
             chosenAns == 2075) {
             feedbackImage.src = "https://i.postimg.cc/63fPn7Hh/next_board_2.png";
         }
@@ -3295,6 +3320,7 @@ async function checkAndChangeAdvisorImage() {
         //**Pixar (Minipath)**
         //Ed Catmull
         if (chosenAns == 2124 ||
+            chosenAns == 2125 ||
             chosenAns == 2126) {
             feedbackImage.src = "https://i.postimg.cc/CKDXMrkW/catmull.png";
         }
@@ -3308,6 +3334,11 @@ async function checkAndChangeAdvisorImage() {
             chosenAns == 2129 ||
             chosenAns == 2130) {
             feedbackImage.src = "https://i.postimg.cc/Kz2V175t/lasseter_1990s.png";
+        }
+
+        if ((chosenAns == 2121 ||
+            chosenAns == 2158) && (health == 1) && (company == 5)) {
+            feedbackImage.src = "https://i.postimg.cc/MHJzw7DV/parkour.png";
         }
     }
 }
@@ -3359,7 +3390,7 @@ campaignTrail_temp.questions_json = [
         "pk": 101,
         "fields": {
             "priority": 1,
-            "description": "{{tempText}} something's been bothering you... Ah yes. He wants to put six expansion slots in every Apple ][. How do you respond?",
+            "description": "{{tempText}} something's been bothering you... Ah yes. He wants to put six expansion slots in every Apple II. How do you respond?",
             "likelihood": 1
         }
     },
@@ -3735,7 +3766,7 @@ campaignTrail_temp.questions_json = [
         "pk": 142,
         "fields": {
             "priority": 1,
-            "description": "Admit it. You’re at this party for some guy at Microsoft, and the birthday boy has been <i>really</i> pissing you off lately. He won’t shut up about their stylus tablets, shoving them in your face. Are you going to let him have the last laugh or what?",
+            "description": "Let's take a step back. You’re at this party for some guy at Microsoft, and the birthday boy has been <i>really</i> pissing you off lately. He won’t shut up about their stylus tablets, shoving them in your face. Are you going to let him have the last laugh or what?",
             "likelihood": 1
         }
     },
@@ -15547,7 +15578,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 2034,
             "candidate": 91,
-            "answer_feedback": "As they all say, \\\"Don't fix what's not broken.\\\" And it's going well so far! I still think that we should aim for the common man with a new model, however."
+            "answer_feedback": "As they all say, \"Don't fix what's not broken.\" And it's going well so far! I still think that we should aim for the common man with a new model, however."
         }
     },
     {
@@ -16258,7 +16289,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 2122,
             "candidate": 91,
-            "answer_feedback": "After a few different investments, you ended up assuming direct control of the company. Still, Pixar is yet to turn a profit."
+            "answer_feedback": "After a few different investments, you end up assuming direct control of the company. Still, Pixar is yet to turn a profit."
         }
     },
     {
@@ -16276,7 +16307,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 2124,
             "candidate": 91,
-            "answer_feedback": "Good news: the cuts have kept Pixar afloat enough for Disney to strike a $26 million movie deal with them."
+            "answer_feedback": "Good news: the cuts have kept our company afloat enough for Disney to strike a $26 million movie deal with us."
         }
     },
     {
@@ -16285,7 +16316,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 2125,
             "candidate": 91,
-            "answer_feedback": "No. You need to lay off the computer staff now. Luckily, Disney has recognized Pixar's creative talents. And from what you've said, they're about to negotiate."
+            "answer_feedback": "No. We need to lay off the computer staff now. Luckily, Disney has recognized Pixar's creative talents. We should be negotiating soon."
         }
     },
     {
@@ -16384,7 +16415,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 2136,
             "candidate": 91,
-            "answer_feedback": "Disney eventually relents to a theatrical release. However, they refuse to have it count as part of the 3 movie deal which allows them 2 more to be done. They also negotiated to keep the right to the IP and the profit sharing and distribution fee, leaving a sour taste in everyone’s mouth."
+            "answer_feedback": "Disney eventually relents to a theatrical release. However, they refuse to have it count as part of the 3 movie deal which allows them 2 more to be done. They also negotiated to keep the rights to the IP and the profit sharing and distribution fee, leaving a sour taste in everyone’s mouth."
         }
     },
     {
@@ -16678,7 +16709,7 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 12011,
             "candidate": 91,
-            "answer_feedback": "Sold! Between leadership cannibalizing the company, shoddy marketing, bad relations with dealers, it’s clear why it sold for this low. At least now, they're finally in safe hands again."
+            "answer_feedback": "Sold! Between leadership cannibalizing the company, shoddy marketing and bad relations with dealers, it’s clear why it sold for this low. At least now, they're finally in safe hands again."
         }
     },
     {
@@ -17949,7 +17980,15 @@ endingPicker = (out, totv, aa, quickstats) => {
         }
     } else {
         if (health == 1) {
-            if (e.player_answers.includes(12000) || e.player_answers.includes(12001)) {
+            if ((e.player_answers.includes(2084)) && (nextsuccess < -1)) {
+                e.pages.push(`<h3>Congratulations! You got a placeholder ending slide.</h3>
+                    <p>As you can see, things obviously aren't finished. Some features may be missing, some things may not be final, etc. Whatever the case is, it should hopefully be taken care of sometime later.
+                    </p>
+                    <p>For now, enjoy the rest of the demo!
+                    </p>`);
+                //e.image = "";
+                e.executable.push([0, (() => { e.image = e.image = 'https://i.postimg.cc/RhyBVc4z/cnn-interactive-90s.png' })]);
+            } else if (e.player_answers.includes(12000) || e.player_answers.includes(12001)) {
                 e.pages.push(`<h3>Unreleased Apple "Macintosh" Sells At Auction</h3>
                     <p>
                     <strong>A rare prototype</strong> of the unreleased Apple Macintosh has just sold for $1,100,000 on February 9, 2005.
@@ -18071,7 +18110,7 @@ endingPicker = (out, totv, aa, quickstats) => {
     }
 
     //p2 - competition
-    if (e.player_answers.includes(12017)) {
+    if (e.player_answers.includes(12017) || nextsuccess < -1) {
         e.pages.push(`<h3>Microsoft appeal falls through</h3>
             <br>
             By Margaret Kane
@@ -18160,6 +18199,31 @@ endingPicker = (out, totv, aa, quickstats) => {
             </p>`);
         //e.image = "";
         e.executable.push([2, (() => { e.image = e.image = 'https://i.postimg.cc/XqNz8VmW/the_office.png' })]);
+    } else if (nextsuccess < -1) {
+        e.pages.push(`<h3>US "Office" Remake To Be Canceled After All</h3>
+            <p>
+            NBC has all but confirmed that the US remake of popular British sitcom "The Office" will not be receiving a second season.
+            </p>
+            <p>
+            Developed by Greg Daniels, "The Office", like its English original, presented a mock documentary of a troubled corporation. Instead of the likes of Ricky Gervais, Martin Freeman, Mackenzie Crook, and Lucy Davis, the show starred an ensemble of Steve Carell, John Krasinski, Rainn Wilson, Jenna Fischer, and B. J. Novak as Michael Scott, Jim Halpert, Dwight Schrute, Pam Beesly, and Ryan Howard respectively.
+            </p>
+            <p>
+            "For a moment, it looked like we'd have a breakthrough," laments Daniels.
+            </p>
+            <p>
+            An NBC spokesman pointed to low ratings as the prime reason for its cancellation. When we asked about any potential revival plans, he responded that "there are no plans to bring the show back at this moment."
+            </p>
+            <p>
+            Despite hopes that Judd Apatow's "The 40 Year-Old Virgin", also starring Carell, would bring attention to the show, it now serves as a bellwether for the actor's future career in film. Krasinski, meanwhile, has guest starred in shows like police drama "CSI: Crime Scene Investigation" and is set to appear in a future episode of "Without a Trace." It is unknown as to what Wilson and Fischer will star in, although Novak has expressed interest in filmmaking in light of "The Office"'s cancellation.
+            </p>
+            <p>
+            But Daniels is not giving up on the show. In the same interview, he has mentioned shopping the show around various networks for a revival. "I haven't had much luck so far," says the former showrunner, "but I'm not giving up that easily, am I now?"
+            </p>
+            <p>
+            Time will tell whether "The Office" will get a reappraisal from networks or remain a "Freaks and Geeks"-esque cult classic. For now, fans can expect a release of the show as it exists now on DVD.
+            </p>`);
+        //e.image = "";
+        e.executable.push([2, (() => { e.image = e.image = 'https://i.postimg.cc/G3qPgXhq/the%20office%204096.png' })]);
     } else if (e.player_answers.includes(2139)) {
         e.pages.push(`<h3>Congratulations! You got a placeholder ending slide.</h3>
             <p>As you can see, things obviously aren't finished. Some features may be missing, some things may not be final, etc. Whatever the case is, it should hopefully be taken care of sometime later.
@@ -18302,6 +18366,35 @@ endingPicker = (out, totv, aa, quickstats) => {
                 </p>`);
                 //e.image = "";
                 e.executable.push([3, (() => { e.image = e.image = 'https://i.postimg.cc/jSBBbYwQ/american_history_usa_bw.png' })]);
+            } else if (nextsuccess < -1) {
+                e.pages.push(`<h3>American History USA</h3>
+                <p>
+                <i>
+                <b>THE CAMPAIGN TRAIL</b>
+                </i>
+                <br>
+                <br>
+                Please select the election you will run in: <br>
+                <select name="election_id" id="election_id">
+                <option value="0">2016</option>
+                </select>
+                <br>
+                <img width="210" src=https://i.postimg.cc/YCTTHBGG/2016-election-4096.png>
+                <br>
+                <p>
+                Donald Trump and Hillary Clinton face off in the 2016 election. While he is well-known among the American public, Trump has never served in elected office. Clinton has served as First Lady, Senator, and Secretary of State. Clinton was the presumptive nominee from start to finish, while Trump has shocked the political world.
+                </p>
+                <p>
+                How will their campaign play out? Can Trump pull off an upset? Can Clinton continue the legacy of Obama?
+                </p>
+                <p>
+                This scenario was made by Dan Bryan.
+                </p>
+                <p>
+                <button>Continue</button>
+                </p>`);
+                //e.image = "";
+                e.executable.push([3, (() => { e.image = e.image = 'https://i.postimg.cc/tR2dvBCB/american-history-usa-4096.png' })]);
             } else {
                 e.pages.push(`<h3>American History USA</h3>
                 <p>
